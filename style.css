@@ -1,0 +1,85 @@
+/**** Reset ****/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**** Style général de la page ****/
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    position: absolute;
+    width: 130px;
+}
+
+.loader .pair {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+}
+
+.loader .pair .dot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:#f7f7f7;
+}
+  
+.loader .pair .dot__2 {
+    right: 0px;
+}
+  
+.loader .pair__2 {
+    left: 50px;
+}
+
+/**** Aniamtion spin ****/
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50%,100% {
+      transform: rotate(180deg);
+    }
+}
+
+.loader .pair__1 {
+    animation: spin 1s ease-in-out infinite;
+}
+
+.loader .pair__2 {
+    animation: spin 1s ease-in-out infinite reverse;
+}
+
+/**** Aniamtion hidden ****/
+
+@keyframes hidden {
+    0%,49% {
+      opacity: 0;
+    }
+    50%,100% {
+      opacity: 1;
+    }
+}
+
+.loader .pair__1 .dot__1 {
+    opacity: 0;
+    animation: hidden 1s ease-in-out infinite reverse;
+}
+
+.loader .pair__2 .dot__2 {
+    opacity: 0;
+    animation: hidden 1s ease-in-out infinite;
+}
